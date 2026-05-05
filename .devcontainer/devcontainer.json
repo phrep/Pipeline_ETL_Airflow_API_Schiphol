@@ -1,0 +1,26 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"../docker-compose.yaml"
+	],
+	"service": "airflow-worker",
+	"workspaceFolder": "/opt/airflow",
+	"shutdownAction": "none",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/home/airflow/.local/bin/python3"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.debugpy",
+				"ms-python.vscode-python-envs",
+				"ms-python.black-formatter",
+				"ms-azuretools.vscode-containers",
+				"ms-vscode-remote.remote-containers",
+				"ms-python.vscode-pylance"
+			]
+		}
+	},
+	"remoteUser": "airflow"
+}

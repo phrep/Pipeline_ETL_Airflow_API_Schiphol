@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Dag",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "program": "/home/airflow/.local/bin/airflow",
+            "args": [
+                "dags", "test", "${input:dagId}", "${input:date}" 
+            ],
+            "env": {
+                "PYTHONPATH": "/home/airflow/.local/bin/python",
+            },
+        },
+    ],
+    "inputs": [
+        {
+            "id": "dagId",
+            "type": "promptString",
+            "description": "Name of your DAG",
+            "default": "test_dag"
+        },
+        {
+            "id": "date",
+            "type": "promptString",
+            "description": "Execution date",
+            "default": "2023-06-16"
+        }
+    ]
+}
